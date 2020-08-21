@@ -4,11 +4,7 @@
   "description": "Employee-Tracker",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "sqlite3 db/employees.db < db/schema.sql",
-    "seed": "sqlite3 db/employees.db < db/seeds.sql",
-    "db": "sqlite3 db/employees.db",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

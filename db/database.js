@@ -1,3 +1,5 @@
+//create a class and inside will be methods for find all employess, managers , etc. which will contain sql statements 
+
 // get the client
 const mysql = require('mysql2');
 
