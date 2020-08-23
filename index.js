@@ -37,7 +37,7 @@ function startQuestions() {
                     addedEmployee();
                     break;
                 case 'update an employee role':
-                    updatedEmployeeRole();
+                    // updatedEmployeeRole();
                     break;
                 case 'exit the tracker':
                     break;
@@ -232,56 +232,56 @@ function addedEmployee() {
         .then(() => viewEmployee())
 }
 
-function updatedEmployeeRole() {
-    inquirer.prompt([
-        {
-            type: 'input',
-            name: 'employees',
-            message: 'What is the ID of the employee you would like to update?',
-            // choices: ['Michael Scott', 'Dwight Schrute', 'Oscar Martinez', 'Angela Martin', 'Kevin Malone', 'Toby Flenderson', 'Meredith Palmer', 'Creed Bratton', 'Stanley Hudson', 'Phillis Vance', 'Jim Halpert', 'Pam Beesly', 'Andy Bernard']
-        },
-        // {
-        //     type: 'input',
-        //     name: 'oldRole',
-        //     message: 'What is the current role ID the employee to has?',
-        //     validate: nameInput => {
-        //         if (nameInput) {
-        //             return true;
-        //         } else {
-        //             console.log('Please enter the old role ID of the employee.');
-        //             return false
-        //         }
-        //     }
-        // }, 
-        {
-            type: 'input',
-            name: 'newRole',
-            message: 'What is the new role ID you would like the employee to have?',
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter the new role ID of the employee.');
-                    return false
-                }
-            }
-        }
-    ])
-        .then(({ newRole, employees }) => {
-            const query = connection.query(
-                'UPDATE employee SET role_id = ? WHERE id = ?',
-                [
-                    {
-                        role_id: newRole
-                    },
-                    {
-                        id: employees
-                    }
-                ]
-            )
-        })
-        .then(() => viewEmployee())
-}
+// function updatedEmployeeRole() {
+//     inquirer.prompt([
+//         {
+//             type: 'input',
+//             name: 'employees',
+//             message: 'What is the ID of the employee you would like to update?',
+//             // choices: ['Michael Scott', 'Dwight Schrute', 'Oscar Martinez', 'Angela Martin', 'Kevin Malone', 'Toby Flenderson', 'Meredith Palmer', 'Creed Bratton', 'Stanley Hudson', 'Phillis Vance', 'Jim Halpert', 'Pam Beesly', 'Andy Bernard']
+//         },
+//         // {
+//         //     type: 'input',
+//         //     name: 'oldRole',
+//         //     message: 'What is the current role ID the employee to has?',
+//         //     validate: nameInput => {
+//         //         if (nameInput) {
+//         //             return true;
+//         //         } else {
+//         //             console.log('Please enter the old role ID of the employee.');
+//         //             return false
+//         //         }
+//         //     }
+//         // }, 
+//         {
+//             type: 'input',
+//             name: 'newRole',
+//             message: 'What is the new role ID you would like the employee to have?',
+//             validate: nameInput => {
+//                 if (nameInput) {
+//                     return true;
+//                 } else {
+//                     console.log('Please enter the new role ID of the employee.');
+//                     return false
+//                 }
+//             }
+//         }
+//     ])
+//         .then(({ newRole, employees }) => {
+//             const query = connection.query(
+//                 'UPDATE employee SET role_id = ? WHERE id = ?',
+//                 [
+//                     {
+//                         role_id: newRole
+//                     },
+//                     {
+//                         id: employees
+//                     }
+//                 ]
+//             )
+//         })
+//         .then(() => viewEmployee())
+// }
 
 // function stopQuestions() {
 
