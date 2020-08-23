@@ -2,6 +2,7 @@
 const db = require('./db/database');
 //put inquirer prompts in this file because this will be the file you run in command-line 'node index.js'
 const inquirer = require('inquirer');
+const { addDepartment } = require('./db/database');
 // const cTable = require("console.table");
 
 function startQuestions() {
@@ -65,28 +66,39 @@ function viewEmployee() {
 };
 
 function addedDepartment() {
-    inquirer.prompt([
-        {
-            type: 'input',
-            name: 'depname',
-            message: 'What is the name of the department?',
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter the department name.');
-                    return false
+    const answer = (
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'depname',
+                message: 'What is the name of the department?',
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter the department name.');
+                        return false
+                    }
                 }
             }
-        }
-    ])
-        .then((answer) => {
+            // {
+            //     type: 'confirm', 
+            //     name: 'condep', 
+            //     message: 'Is this the department you wish to insert?' + answer.name, 
+            //     when: addDepartment(answer)
+            // }
+        ]))
+    return answer
+        .then(function (err, answer) {
+            if (err) throw err;
             db.addDepartment(answer)
             // db.addDepartment(answer)
         })
-        .then(console.table())
-        .then(() => startQuestions())
-};
+        .then(console.table(answer))
+        .catch(console.err);
+    // .then(() => startQuestions())
+}
+
 // function stopQuestions() {
 
 //     inquirer.prompt([
@@ -106,5 +118,4 @@ function addedDepartment() {
 //             }
 //         })
 // };
-
 startQuestions();
