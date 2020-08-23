@@ -26,7 +26,7 @@
 
   ## **Usage**
   The project is meant to be used to help the user view data, in this case employee data, in different formats that help organize the data into different categories. 
-  - Here is a video that shows you how to access the employee tracking data tables: [employee-tracker video]()
+  - Here is a video that shows you how to access the employee tracking data tables: [employee-tracker video](https://drive.google.com/file/d/1717Z_QZXI2j29e17lMwEjgYjIbZIjoDC/view)
 
   ## **Contributions**
   There are many ways in which you can contribute to this project, for example:
