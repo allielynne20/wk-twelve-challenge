@@ -6,7 +6,7 @@
   This application is meant to be ran from the command line and show different databases to track employees. THe user can choose to view departments, employee roles, and different employees. 
 
   ## **Example Employee-Tracker**
-  ![Image of Employee-Tracker](./employee-tracker.png)
+  ![Image of Employee-Tracker](./employee-tracker.PNG)
 
   ## **Table of Contents**
 
